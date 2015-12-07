@@ -93,7 +93,7 @@ class Enemies {
     RightE = RightE_;
   }
   void update() {
-    /enemy movements
+    //enemy movements
     if (RightE == true) {
       xPosE = xPosE+ SpeedE;
     }
