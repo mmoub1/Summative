@@ -1,17 +1,17 @@
 //https://github.com/mmoub1/Summative.git
-Enemies[] myEnemies = new Enemies[4];
-float xPos = 200;
-float yPos = 200;
-float Speed = 2.5;
-boolean Up = false;
+Enemies[] myEnemies = new Enemies[4]; //creating enemy class
+float xPos = 200; //user x positon
+float yPos = 200; //user y position
+float Speed = 2.5; //user's speed
+boolean Up = false; //user's direction statements
 boolean Down = false;
 boolean Left = false;
 boolean Right = false;
 
 void setup() {
-  size(600, 600);
-  rectMode(CENTER);
-  for (int i = 0; i < 4; i++) {
+  size(600, 600); //background size
+  rectMode(CENTER); 
+  for (int i = 0; i < 4; i++) { //enemy for loop
     myEnemies[i] = new Enemies(random(20,580), random(10, 580), color(#030303), 2, false, false, false, false);
   }
 }
@@ -21,10 +21,10 @@ void draw() {
   fill(255, 0, 0);
   ellipse(xPos, yPos, 20, 20);
   for (int i =0; i < 4; i++) {
-    myEnemies[i].update();
+    myEnemies[i].update(); 
     myEnemies[i].display();
   }
-
+  //user movements
   if (Right == true) {
     xPos = xPos+ Speed;
   }
@@ -41,7 +41,7 @@ void draw() {
     yPos = yPos + Speed;
   }
 }
-
+//controlling user movements
 void keyPressed() {
   if (keyCode == RIGHT) {
     Right = true;
@@ -70,13 +70,14 @@ void keyPressed() {
     Right = false;
     Left = false;
   }
+  //end of user controls
 }
 class Enemies {
-  float xPosE;
-  float yPosE;
-  color c;
-  int SpeedE;
-  boolean UpE;
+  float xPosE; //x positon of enemy
+  float yPosE; //y postion of enemy
+  color c; //colour of enemy
+  int SpeedE; //speed of enemy
+  boolean UpE; //enemy direction statements
   boolean DownE;
   boolean LeftE;
   boolean RightE;
@@ -92,7 +93,7 @@ class Enemies {
     RightE = RightE_;
   }
   void update() {
-
+    /enemy movements
     if (RightE == true) {
       xPosE = xPosE+ SpeedE;
     }
@@ -108,7 +109,7 @@ class Enemies {
     if (DownE == true) {
       yPosE = yPosE + SpeedE;
     }
-
+      //enemy movements executing
     if ((yPos > yPosE) && (dist(xPos, yPos, xPosE, yPosE) < 100) && ((yPos-yPosE > xPos-xPosE) || (yPos-yPosE > xPos-xPos*-1))) {
       print("DOWN");
       DownE = true; 
@@ -147,7 +148,7 @@ class Enemies {
       DownE = false;
     }
   }
-
+ //displays enemies
   void display() {
     fill(c);
     rect(xPosE, yPosE, 20, 20);
