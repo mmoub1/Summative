@@ -60,7 +60,7 @@ class Enemies {
       DownE = false;
     }
 
-   else if ((xPos < xPosE) && (dist(xPos+50, yPos, xPosE, yPosE) < 150) && ((xPos-xPosE*-1 > yPos-yPosE) || (xPos-xPosE*-1 > yPos-yPos*-1))) {
+   else if ((xPos < xPosE) && (dist(xPos+25, yPos, xPosE, yPosE) < 150) && ((xPos-xPosE*-1 > yPos-yPosE) || (xPos-xPosE*-1 > yPos-yPos*-1))) {
      print("LEFT");
       LeftE = true;
       RightE = false;
