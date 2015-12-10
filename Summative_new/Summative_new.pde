@@ -10,13 +10,16 @@ boolean Right = false;
 PImage myImage;
 PImage myImage2;
 PImage myImage3;
+boolean GameOn = false;
 
 void setup() {
   size(600, 600); //background size
   smooth();
+  background(255);
   myImage = loadImage("Eren (right).png");
   myImage2 = loadImage("Eren (left).png");
   myImage3 = loadImage("Eren (front).png");
+  image(myImage3, xPos, yPos);
   rectMode(CENTER); 
   for (int i = 0; i < 4; i++) { //enemy for loop
     myEnemies[i] = new Enemies(random(20, 580), random(10, 580), color(#030303), 2, false, false, false, false);
@@ -24,9 +27,9 @@ void setup() {
 }
 
 void draw() {
+  if(GameOn == true) {
   background(255);
-  //fill(255, 0, 0);
-  //ellipse(xPos, yPos, 20, 20); 
+  }
   if (keyCode == RIGHT) {                              
     image(myImage, xPos, yPos);
   }
@@ -46,19 +49,23 @@ void draw() {
   }
   //user movements
   if (Right == true) {
+    GameOn = true;
     xPos = xPos+ Speed;
   }
 
   if (Left == true) {
     xPos = xPos - Speed;
+    GameOn = true;
   }
 
   if (Up == true) {
     yPos = yPos - Speed;
+    GameOn = true;
   }
 
   if (Down == true) {
     yPos = yPos + Speed;
+    GameOn = true;
   }
 }
 //controlling user movements
@@ -68,6 +75,7 @@ void keyPressed() {
     Left = false;
     Up = false;
     Down = false;
+    GameOn = true;
   }
 
   if (keyCode == LEFT) {
@@ -75,6 +83,7 @@ void keyPressed() {
     Up = false;
     Down = false;
     Right = false;
+    GameOn = true;
   }
 
   if (keyCode == UP) {
@@ -82,6 +91,7 @@ void keyPressed() {
     Down = false;
     Right = false;
     Left = false;
+    GameOn = true;
   }
 
   if (keyCode == DOWN) {
@@ -89,6 +99,7 @@ void keyPressed() {
     Up = false;
     Right = false;
     Left = false;
+    GameOn = true;
   }
   //end of user controls
 }

@@ -36,7 +36,7 @@ class Enemies {
       yPosE = yPosE + SpeedE;
     }
       //enemy movements executing
-    if ((yPos > yPosE) && (dist(xPos, yPos, xPosE, yPosE) < 150) && ((yPos-yPosE > xPos-xPosE) || (yPos-yPosE > xPos-xPos*-1))) {
+    if ((yPos > yPosE) && (dist(xPos, yPos, xPosE, yPosE) < 150) && ((yPos-yPosE > xPos-xPosE) || (yPos-yPosE > xPos-xPos*-1)) && (GameOn == true)) {
       print("DOWN");
       DownE = true; 
       UpE = false;
@@ -44,7 +44,7 @@ class Enemies {
       RightE = false;
     }
 
-   else if ((yPos < yPosE) && (dist(xPos, yPos, xPosE, yPosE) < 150) && ((yPos-yPosE*-1 > xPos-xPosE) || (yPos-yPosE*-1 > xPos-xPos*-1))) {
+   else if ((yPos < yPosE) && (dist(xPos, yPos, xPosE, yPosE) < 150) && ((yPos-yPosE*-1 > xPos-xPosE) || (yPos-yPosE*-1 > xPos-xPos*-1)) && (GameOn == true)) {
      print("UP");
       UpE = true;
       DownE = false;
@@ -52,7 +52,7 @@ class Enemies {
       RightE = false;
     }
 
-   else if ((xPos > xPosE) && (dist(xPos, yPos, xPosE, yPosE) < 150) && ((xPos-xPosE > yPos-yPosE) || (xPos-xPosE > yPos-yPos*-1))) {
+   else if ((xPos > xPosE) && (dist(xPos, yPos, xPosE, yPosE) < 150) && ((xPos-xPosE > yPos-yPosE) || (xPos-xPosE > yPos-yPos*-1)) && (GameOn == true)) {
     print("RIGHT");
       RightE = true; 
       LeftE = false;
@@ -60,7 +60,7 @@ class Enemies {
       DownE = false;
     }
 
-   else if ((xPos < xPosE) && (dist(xPos+25, yPos, xPosE, yPosE) < 150) && ((xPos-xPosE*-1 > yPos-yPosE) || (xPos-xPosE*-1 > yPos-yPos*-1))) {
+   else if ((xPos < xPosE) && (dist(xPos+75, yPos, xPosE, yPosE) < 150) && ((xPos-xPosE*-1 > yPos-yPosE) || (xPos-xPosE*-1 > yPos-yPos*-1)) && (GameOn == true)) {
      print("LEFT");
       LeftE = true;
       RightE = false;
