@@ -15,7 +15,7 @@ boolean GameOn = false;
 void setup() {
   size(600, 600); //background size
   smooth();
-  background(255);
+  background(255,255,255);
   myImage = loadImage("Eren (right).png");
   myImage2 = loadImage("Eren (left).png");
   myImage3 = loadImage("Eren (front).png");
