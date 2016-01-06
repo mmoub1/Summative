@@ -431,7 +431,18 @@ class Enemies {
   }
   //displays enemies
   void display() {
-    fill(c);
-    rect(xPosE, yPosE, 20, 20);
+  if (DownE == true) {
+    image(myImage5, xPosE, yPosE);
+  }
+  if (UpE == true) {
+    image(myImage5, xPosE, yPosE);
+  }
+  if (RightE == true) {
+    image(myImage6, xPosE, yPosE);
+  }
+  if (LeftE == true) {
+    image(myImage7, xPosE, yPosE);
+  }
   }
 }
+  

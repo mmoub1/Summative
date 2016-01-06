@@ -10,6 +10,10 @@ boolean Right = false;
 PImage myImage;
 PImage myImage2;
 PImage myImage3;
+PImage myImage4;
+PImage myImage5;
+PImage myImage6;
+PImage myImage7;
 boolean GameOn = false;
 boolean GameOver = false;
 boolean hitr = false;
@@ -24,13 +28,21 @@ void setup() {
   myImage = loadImage("Eren (right).png");
   myImage2 = loadImage("Eren (left).png");
   myImage3 = loadImage("Eren (front).png");
+  myImage4 = loadImage("Eren (back).png");
+  myImage5 = loadImage("Titan (front).png");
+  myImage6 = loadImage("Titan1 (right).png");
+  myImage7 = loadImage("Titan1 (left).png");
   image(myImage3, xPos, yPos);
   myImage.resize(32, 30);
   myImage2.resize(32, 30);
   myImage3.resize(32, 30);
+  myImage4.resize(32, 30);
+  myImage5.resize(30, 30);
+  myImage6.resize(30, 30);
+  myImage7.resize(30, 30);
   for (int i = 0; i < 4; i++) { //enemy for loop
-    myEnemies[i] = new Enemies(round(random(245, 365)), round(random(255, 285)), color(255, 0, 0), 2, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false, false, false);
+    myEnemies[i] = new Enemies(round(random(245, 365)), round(random(255, 285)), color(255, 0, 0), 2, false, false, false, false, false, false, false, false, 
+      false, false, false, false, false, false, false, false, false, false, false, false);
   }
 }
 
@@ -63,7 +75,7 @@ void draw() {
 
   //user movements
   if ((Right == true) && (hitr == false))
-   {
+  {
     GameOn = true;
     xPos = xPos+ Speed;
   }
@@ -78,12 +90,10 @@ void draw() {
     GameOn = true;
   }
 
-  if ((Down == true) && (hitd == false)){
+  if ((Down == true) && (hitd == false)) {
     yPos = yPos + Speed;
     GameOn = true;
   }
-
-  
 }
 //controlling user movements
 void keyPressed() {
