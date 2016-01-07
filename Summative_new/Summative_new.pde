@@ -14,6 +14,7 @@ PImage myImage4;
 PImage myImage5;
 PImage myImage6;
 PImage myImage7;
+PImage myImage8;
 boolean GameOn = false;
 boolean GameOver = false;
 boolean hitr = false;
@@ -33,6 +34,7 @@ void setup() {
   myImage5 = loadImage("Titan (front).png");
   myImage6 = loadImage("Titan1 (right).png");
   myImage7 = loadImage("Titan1 (left).png");
+  myImage8 = loadImage("Titan (back).png");
   image(myImage3, xPos, yPos);
   myImage.resize(32, 30);
   myImage2.resize(32, 30);
@@ -41,6 +43,7 @@ void setup() {
   myImage5.resize(30, 30);
   myImage6.resize(30, 30);
   myImage7.resize(30, 30);
+  myImage8.resize(30, 30);
   for (int i = 0; i < 4; i++) { //enemy for loop
     myEnemies[i] = new Enemies(round(random(245, 365)), round(random(255, 285)), color(255, 0, 0), 2, false, false, false, false, false, false, false, false, 
       false, false, false, false, false, false, false, false, false, false, false, false);
@@ -71,7 +74,7 @@ println(mouseX, mouseY);
     image(myImage3, xPos, yPos);
   }
   if (keyCode == UP) {                              
-    image(myImage3, xPos, yPos);
+    image(myImage4, xPos, yPos);
   }
 
   //user movements

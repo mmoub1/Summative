@@ -435,7 +435,7 @@ class Enemies {
     image(myImage5, xPosE, yPosE);
   }
   if (UpE == true) {
-    image(myImage5, xPosE, yPosE);
+    image(myImage8, xPosE, yPosE);
   }
   if (RightE == true) {
     image(myImage6, xPosE, yPosE);
