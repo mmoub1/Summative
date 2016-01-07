@@ -24,6 +24,7 @@ boolean hitd = false;
 void setup() {
   size(600, 600); //background size
   smooth();
+  noStroke();
   background(255, 255, 255);
   myImage = loadImage("Eren (right).png");
   myImage2 = loadImage("Eren (left).png");
@@ -57,7 +58,7 @@ void draw() {
     myEnemies[i].update(); 
     myEnemies[i].display();
   }
-
+println(mouseX, mouseY);
   //println(Speed);
 
   if (keyCode == RIGHT) {                              
@@ -94,6 +95,16 @@ void draw() {
     yPos = yPos + Speed;
     GameOn = true;
   }
+  if ((yPos+10 > 265) && (yPos+20 < 310) && (xPos < 3 )) {
+    xPos = 565;
+  }
+  
+  if ((yPos+10 > 265) && (yPos+20 < 310) && (xPos+32 > 597)){
+    xPos = 10;
+  }
+  
+  
+  
 }
 //controlling user movements
 void keyPressed() {
