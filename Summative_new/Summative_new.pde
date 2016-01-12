@@ -1,4 +1,5 @@
 //https://github.com/mmoub1/Summative.git
+//13th commit
 Enemies[] myEnemies = new Enemies[4]; //creating enemy class
 int xPos = 200; //user x positon
 int yPos = 200; //user y position
